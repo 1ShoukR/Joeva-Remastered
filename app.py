@@ -12,6 +12,9 @@ app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Rahmin12@localhost:3306/joeva_remastered'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['DEBUG'] = True
+
+FLASK_DB_SEEDS_PATH = "seeds.py"
+
 db.init_app(app)
 
 
@@ -19,6 +22,7 @@ db.init_app(app)
 
 @app.route("/")
 def index():
+    db.create_all()
     return "I am working"
 
 

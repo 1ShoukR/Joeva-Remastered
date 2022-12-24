@@ -11,9 +11,27 @@
 #     User(**initial_user).save()
 
 
-from models import User
+
+from flask import current_app
+from datetime import datetime
+from ..models import User
+
+
+
+app_config = current_app.config
+
 
 seed_data = {
     "username": "guest",
-    "password": "guest"
+    "password": "guest",
+    "first_name": "guest",
+    "last_name": "guest",
+    "email": "guest@guest.com",
+    "created_at": datetime.utcnow,
+    "updated_at": datetime.utcnow
 }
+
+print(seed_data["username"])
+
+if User.query.filter_by(username=seed_data["username"]) is None:
+    User(**seed_data).save()
