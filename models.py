@@ -38,3 +38,27 @@ class ComputerProducts(db.Model):
     description = db.Column(db.String(120), nullable=False)
     reviews = db.Column(db.String(120), nullable=False)
     image = db.Column(db.Text, nullable=False)
+
+class BoujieeClothes(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), nullable=False)
+    price = db.Column(db.String(120), nullable=False)
+    description = db.Column(db.String(120), nullable=False)
+    reviews = db.Column(db.String(120), nullable=False)
+    image = db.Column(db.Text, nullable=False)
+
+class BabyProducts(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), nullable=False)
+    price = db.Column(db.String(120), nullable=False)
+    description = db.Column(db.String(120), nullable=False)
+    reviews = db.Column(db.String(120), nullable=False)
+    image = db.Column(db.Text, nullable=False)
+
+class FreeJunks(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), nullable=False)
+    price = db.Column(db.String(120), nullable=False)
+    description = db.Column(db.String(120), nullable=False)
+    reviews = db.Column(db.String(120), nullable=False)
+    image = db.Column(db.Text, nullable=False)

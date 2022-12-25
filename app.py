@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, render_template, request, session, g
 from flask_cors import CORS, cross_origin
-from models import db, User
+from datetime import datetime
+from models import db, User, ComputerProducts, BoujieeClothes, BabyProducts, FreeJunks
 
 
 
@@ -16,6 +17,22 @@ app.config['DEBUG'] = True
 FLASK_DB_SEEDS_PATH = "seeds.py"
 
 db.init_app(app)
+
+
+@app.route("/seed-data", methods=["GET"])
+def seed_data():
+    seed_data = {
+    "name": "G.SKILL Trident Z Royal Series 32GB (2 x 16GB)",
+    "price": "$149.99",
+    "description": "Incredibly fast and efficient RAM from G.SKILL",
+    "reviews": "8.1/10 (55 reviews)",
+    "image": "https://www.gskill.com/_upload/images/2106081105080.png",
+}
+    seed_user_account = ComputerProducts(name=seed_data["name"], price=seed_data["price"], description=seed_data["description"], reviews=seed_data["reviews"], image=seed_data["image"])
+    db.session.add(seed_user_account)
+    db.session.commit()
+    return "I have been added to database"
+
 
 
 

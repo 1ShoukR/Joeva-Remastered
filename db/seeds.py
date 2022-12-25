@@ -30,21 +30,19 @@ db.init_app(app)
 
 
 # print(seed_data["username"])
+
 seed_data = {
-    "username": " "
+    "username": "guest",
+    "password": "guest",
+    "first_name": "guest",
+    "last_name": "guest",
+    "email": "guest@guest.com",
+    "created_at": datetime.utcnow,
+    "updated_at": datetime.utcnow
 }
 
 
 if User.query.filter_by(username=seed_data["username"]) is None:
-    seed_data = {
-        "username": "guest",
-        "password": "guest",
-        "first_name": "guest",
-        "last_name": "guest",
-        "email": "guest@guest.com",
-        "created_at": datetime.utcnow,
-        "updated_at": datetime.utcnow
-    }
     seed_user_account = User(username=seed_data["username"], password=seed_data["password"], first_name=seed_data["first_name"], last_name=seed_data["last_name"], email=seed_data["email"], created_at=datetime.utcnow, updated_at=datetime.utcnow)
     db.session.add(seed_user_account)
     db.session.commit()
