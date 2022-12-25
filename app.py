@@ -22,13 +22,13 @@ db.init_app(app)
 @app.route("/seed-data", methods=["GET"])
 def seed_data():
     seed_data = {
-    "name": "G.SKILL Trident Z Royal Series 32GB (2 x 16GB)",
-    "price": "$149.99",
-    "description": "Incredibly fast and efficient RAM from G.SKILL",
-    "reviews": "8.1/10 (55 reviews)",
-    "image": "https://www.gskill.com/_upload/images/2106081105080.png",
+    "name": "The Blke Socks",
+    "price": "$330.00",
+    "description": """The only socks Blke would ever wear. These socks will make you feel like you are on Cloud9.""",
+    "reviews": "10/10 (1 reviews)",
+    "image": "https://bit.ly/3OLpQ7e",
 }
-    seed_user_account = ComputerProducts(name=seed_data["name"], price=seed_data["price"], description=seed_data["description"], reviews=seed_data["reviews"], image=seed_data["image"])
+    seed_user_account = BoujieeClothes(name=seed_data["name"], price=seed_data["price"], description=seed_data["description"], reviews=seed_data["reviews"], image=seed_data["image"])
     db.session.add(seed_user_account)
     db.session.commit()
     return "I have been added to database"
