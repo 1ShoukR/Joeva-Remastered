@@ -1,10 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import Homepage from './Components/Homepage';
+import ReduxRoutes from './Components/ReduxRoutes';
 
 function App() {
   return (
     <div className="App">
-      <h1>Joeva Frontend</h1>
+      <ReduxRoutes />
+      <Homepage />
     </div>
   );
 }
