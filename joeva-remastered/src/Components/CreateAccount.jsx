@@ -3,7 +3,7 @@ import "../CSS/createAccount.css"
 
 const CreateAccount = () => {
   return (
-    <div>
+    <div className="wrapper">
         <div className="createAccountTitle">
             <h1>Create Your Account Here!</h1>
         </div>
