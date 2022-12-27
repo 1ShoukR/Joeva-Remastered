@@ -16,9 +16,11 @@ const Navbar = () => {
       <div className="links">
         <Link to="/"><p>Home</p></Link>
         <Link to="/create_account"><p>Create Account</p></Link>
+        <Link to="/computer_products"><p>Computer Products</p></Link>
       </div>
       <div className="login-buttons">
-
+        <button>Create Account</button>
+        <button>Login</button>
       </div>
     </nav> 
 </>
