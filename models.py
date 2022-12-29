@@ -62,3 +62,6 @@ class FreeJunks(db.Model):
     description = db.Column(db.String(120), nullable=False)
     reviews = db.Column(db.String(120), nullable=False)
     image = db.Column(db.Text, nullable=False)
+
+class Orders(db.Model):
+    id = db.Column(db.Integer, primary_key=True)

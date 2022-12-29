@@ -5,7 +5,6 @@
     align-items: center;
     gap: 20px;
     width: fit-content;
-    border: 1px solid red;
 }
 
 .links {
@@ -16,6 +15,5 @@
 
 .login-buttons {
     display: flex;
-    border: 1px solid red;
     margin-left: 1252px;
 }
