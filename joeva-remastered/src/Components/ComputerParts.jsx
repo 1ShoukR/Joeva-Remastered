@@ -1,22 +1,15 @@
 import React from "react";
-import axios from "axios";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getComputerParts } from "../Actions/getComputerParts";
 
 const ComputerParts = () => {
-  const getComputerParts = () => {
-    axios
-			.get('http://127.0.0.1:5000/get-pc-parts')
-			.then(function (response) {
-				console.log(response);
-			})
-			.catch(function (error) {
-				console.log(error);
-			});
-  }
+  const dispatch = useDispatch()
   useEffect(() => {
-    getComputerParts()
+    getComputerParts(dispatch)
   }, []);
-  
+  const globalPcParts = useSelector((state) => state.pcParts.computerParts)
+  console.log(globalPcParts)
   return (
 		<div className="computerPartsWrapper">
 			<div className="computerPartsHeaderContainer">

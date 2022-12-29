@@ -4,13 +4,13 @@ import { applyMiddleware, createStore } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
-// import rootReducer from './reducers/rootReducer';
+import rootReducer from './Reducers/rootReducer';
 import './index.css';
 
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = createStore(applyMiddleware(logger)); // pass rootReducer variable in createStore function when created
+const store = createStore(rootReducer, applyMiddleware(logger)); // pass rootReducer variable in createStore function when created
 root.render(
 	<Provider store={store}>
 		<BrowserRouter>
