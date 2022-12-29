@@ -65,3 +65,12 @@ class FreeJunks(db.Model):
 
 class Orders(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, nullable=False)
+    computer_product_id = db.Column(db.Integer, nullable=True)
+    Boujiee_clothes_id = db.Column(db.Integer, nullable=True)
+    order_summary = db.Column(db.Text, nullable=True)
+    carrier_service = db.Column(db.String(120), nullable=False)
+    tracking_number = db.Column(db.Text, nullable=False)
+    delivery_date = db.Column(db.String(120), nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow)
