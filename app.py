@@ -56,10 +56,13 @@ def get_pc_parts():
     for pc_part in pc_parts:
         response.append({
             "id": pc_part.id,
-            "name": pc_part.name
+            "name": pc_part.name,
+            "price": pc_part.price,
+            "description": pc_part.description,
+            "reviews": pc_part.reviews,
+            "image": pc_part.image
         })
-    print(pc_parts)
-    return "hello"
+    return response
 
 
 
