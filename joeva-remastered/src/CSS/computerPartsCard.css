@@ -1,29 +1,37 @@
 .computerPartsCardWrapper {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: auto;
+}
+
+
+.computerPartsCardContainer {
 	display: grid;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     height: max-content;
     column-gap: 10px;
     row-gap: 10px;
     padding: 20px;
     grid-auto-flow: row;
-}
-
-
-.computerPartsCardContainer {
-    display: flex;
-	flex-direction: column;
-	border-radius: 20px;
 	border: 1px solid black;
-    width: max-content;
     padding: 20px;
-    grid-column: 1 / 3;
+    width: 1000px;
 }
 
 .computerPartsCardImageContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.computerPartsCardPrice {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
