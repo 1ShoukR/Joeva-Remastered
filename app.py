@@ -67,6 +67,21 @@ def get_pc_parts():
 
 
 
+@app.route("/get-boujiee-clothes", methods=["GET"])
+def get_boujiee_clothes():
+    clothes = BoujieeClothes.query.all()
+    response = []
+    for item in clothes:
+        response.append({
+            "id": item.id,
+            "name": item.name,
+            "price": item.price,
+            "description": item.description,
+            "reviews": item.reviews,
+            "image": item.image
+        })
+    return response
+
 
 
 @app.route("/")
