@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBoujieeClothes } from "../Actions/getBoujieeClothjes";
+import BoujieClothesCard from "./BoujieClothesCard";
 
 
 
@@ -25,6 +26,15 @@ export const BoujieeClothes = () => {
             <div className="clothesProductsHeader">
                 <h4>Products</h4>
             </div>
+            {globalClothes.map((item, index) =>{
+                return (
+                <>
+                    <div className="clothesCardWrapper">
+                        <BoujieClothesCard key={index} item={item} />
+                    </div>
+                </>
+                )
+            })}
         </div>
     </div>
   )
