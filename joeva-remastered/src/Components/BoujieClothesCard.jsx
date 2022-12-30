@@ -1,6 +1,6 @@
 import React from "react";
 
-const BoujieClothesCard = () => {
+const BoujieClothesCard = (props) => {
   return <div>BoujieClothesCard</div>;
 };
 

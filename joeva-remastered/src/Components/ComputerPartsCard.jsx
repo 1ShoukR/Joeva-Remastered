@@ -1,4 +1,5 @@
 import React from "react";
+import { addToCart } from "../Actions/addToCart";
 import "../CSS/computerPartsCard.css"
 
 
@@ -22,7 +23,7 @@ export const ComputerPartsCard = (props) => {
             <p>{props?.item?.reviews}</p>
         </div>
         <div>
-            <button>Add to cart</button>
+            <button value={props?.item?.id} onClick={(e) => addToCart(e)}>Add to cart</button>
         </div>
     </div>
   );
