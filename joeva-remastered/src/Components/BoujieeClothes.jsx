@@ -11,10 +11,21 @@ export const BoujieeClothes = () => {
         getBoujieeClothes(dispatch)
     }, [])
     const globalClothes = useSelector((state) => state.clothes.boujieeClothes);
-    console.log("this is my console log", globalClothes)
   return (
-    <div>
-
+    <div className="clothesWrapper">
+        <div className="clothesHeaderContainer">
+            <div className="clothesHeader">
+                <h2>Clothes</h2>
+            </div>
+            <div className="clothesDescription">
+                <p>The finest clothes you will ever see on the market!</p>
+            </div>
+        </div>
+        <div className="clothesProductsContainer">
+            <div className="clothesProductsHeader">
+                <h4>Products</h4>
+            </div>
+        </div>
     </div>
   )
 };

@@ -10,7 +10,6 @@ const ComputerParts = () => {
     getComputerParts(dispatch)
   }, []);
   const globalPcParts = useSelector((state) => state.pcParts.computerParts)
-  console.log(globalPcParts)
   return (
 		<div className="computerPartsWrapper">
 			<div className="computerPartsHeaderContainer">
