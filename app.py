@@ -2,6 +2,7 @@ from flask import Flask, redirect, url_for, render_template, request, session, g
 from flask_cors import CORS, cross_origin
 from datetime import datetime
 from models import db, User, ComputerProducts, BoujieeClothes, BabyProducts, FreeJunks
+import bcrypt
 
 
 
