@@ -7,7 +7,7 @@ export const sendLoginInfo = (dispatch, e) => {
 		password: e.target.form[1].value,
 	};
     axios
-	.post('/user', input)
+	.post('http://127.0.0.1:5000/login-confirm', input)
 	.then(function (response) {
 	console.log(response);
 })

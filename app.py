@@ -50,6 +50,12 @@ def create_account_confirm():
         }
     return response
 
+@app.route("/login-confirm", methods=["POST"])
+def login_confirm():
+    content = request.json
+    print("this is content", content)
+    return content
+
 @app.route("/get-pc-parts", methods=["GET"])
 def get_pc_parts():
     pc_parts = ComputerProducts.query.all()
