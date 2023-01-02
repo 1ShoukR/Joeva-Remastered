@@ -2,7 +2,9 @@ from flask import Flask, redirect, url_for, render_template, request, session, g
 from flask_cors import CORS, cross_origin
 from datetime import datetime
 from models import db, User, ComputerProducts, BoujieeClothes, BabyProducts, FreeJunks
+import json
 import bcrypt
+import os
 
 
 
@@ -19,6 +21,15 @@ FLASK_DB_SEEDS_PATH = "seeds.py"
 
 db.init_app(app)
 
+
+@app.before_request
+def before_request():
+    g.user = None
+    if os.path.isfile("session.json"):
+        print("File exists and is readable")
+        with open('session.json', "r") as f:
+            data = json.load(f)
+            g.user = User.query.filter_by(id=data["id"]).first()
 
 @app.route("/seed-data", methods=["GET"])
 def seed_data():
@@ -54,6 +65,14 @@ def create_account_confirm():
 def login_confirm():
     content = request.json
     print("this is content", content)
+    logged_in_user = User.query.filter_by(username=content["username"], password=content["password"])
+    response = {
+        "id": logged_in_user.id,
+        "username": logged_in_user.username,
+        "password": logged_in_user.password
+    }
+    with open("session.json", "w") as outfile:
+        outfile.write(json.dumps(response, indent=4))
     return content
 
 @app.route("/get-pc-parts", methods=["GET"])
