@@ -11,6 +11,7 @@ export const sendLoginInfo = (dispatch, e) => {
 	.then(function (response) {
 	console.log(response);
     dispatch({ type: 'SET_ACCOUNT' , payload: response.data});
+    dispatch({ type: 'SET_LOGGEDIN', payload: true });
 })
 	.catch(function (error) {
 	console.log(error);

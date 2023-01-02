@@ -1,5 +1,6 @@
 const initialState = {
-    account: []
+    account: [],
+    loggedIn: false,
 }
 
 
@@ -11,6 +12,11 @@ const accountReducer = (state = initialState, action) => {
             return {
                 ...state,
                 account: action.payload
+            }
+        case "SET_LOGGEDIN":
+            return {
+                ...state,
+                loggedIn: action.payload
             }
         default:
             return state

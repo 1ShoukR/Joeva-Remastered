@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import "../CSS/navContainer.css"
+import { NavBarConditional } from "./NavBarConditional";
 
 
 
@@ -13,7 +14,11 @@ import "../CSS/navContainer.css"
 const Navbar = () => {
   // make ternary for globalAccountData
   const globalAccountData = useSelector((state) => state.account.account)
-  console.log("This is accountData Global", globalAccountData)
+  const isLoggedInData = useSelector((state) => state.account.loggedIn)
+  console.log("This is accountData Global", isLoggedInData)
+  if (isLoggedInData === true) {
+    return <NavBarConditional globalAccountData={globalAccountData} />
+  }
   return (
     <nav className="navContainer">
       <div className="links">
@@ -24,7 +29,6 @@ const Navbar = () => {
         <Link to="/boujiee_clothes"><p>Boujiee Clothes</p></Link>
       </div>
     </nav> 
-
 );
 };
 
