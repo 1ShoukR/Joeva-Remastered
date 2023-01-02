@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from "react-redux";
 import "../CSS/navContainer.css"
 
 
@@ -10,8 +11,10 @@ import "../CSS/navContainer.css"
 // when someone logs in, their name displays as 'Welcome ${User's Name}' with a sign out button.
 
 const Navbar = () => {
+  // make ternary for globalAccountData
+  const globalAccountData = useSelector((state) => state.account.account)
+  console.log("This is accountData Global", globalAccountData)
   return (
-<>
     <nav className="navContainer">
       <div className="links">
         <Link to="/"><p>Home</p></Link>
@@ -21,8 +24,8 @@ const Navbar = () => {
         <Link to="/boujiee_clothes"><p>Boujiee Clothes</p></Link>
       </div>
     </nav> 
-</>
-  );
+
+);
 };
 
 export default Navbar;

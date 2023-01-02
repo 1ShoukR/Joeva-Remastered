@@ -1,3 +1,5 @@
 {
-    "message": "User does not exist."
+    "id": 2,
+    "username": "sherry",
+    "password": "test"
 }

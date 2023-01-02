@@ -10,6 +10,7 @@ export const sendLoginInfo = (dispatch, e) => {
 	.post('http://127.0.0.1:5000/login-confirm', input)
 	.then(function (response) {
 	console.log(response);
+    dispatch({ type: 'SET_ACCOUNT' , payload: response.data});
 })
 	.catch(function (error) {
 	console.log(error);
