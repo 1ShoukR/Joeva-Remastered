@@ -4,6 +4,7 @@ import { BoujieeClothes } from "./BoujieeClothes";
 import ComputerParts from "./ComputerParts";
 import CreateAccount from "./CreateAccount";
 import Homepage from "./Homepage";
+import { Login } from "./Login";
 
 
 const ReduxRoutes = () => {
@@ -15,6 +16,7 @@ const ReduxRoutes = () => {
 				<Route path="/create_account" element={<CreateAccount />} />
 				<Route path="/computer_products" element={<ComputerParts />} />
 				<Route path="/boujiee_clothes" element={<BoujieeClothes />} />
+				<Route path="/login" element={<Login />} />
 			</Routes>
 		</div>
 	);};
