@@ -65,7 +65,7 @@ def create_account_confirm():
 def login_confirm():
     content = request.json
     print("this is content", content)
-    logged_in_user = User.query.filter_by(username=content["username"], password=content["password"])
+    logged_in_user = User.query.filter_by(username=content["username"], password=content["password"]).first()
     response = {
         "id": logged_in_user.id,
         "username": logged_in_user.username,
@@ -73,7 +73,7 @@ def login_confirm():
     }
     with open("session.json", "w") as outfile:
         outfile.write(json.dumps(response, indent=4))
-    return content
+    return response
 
 @app.route("/get-pc-parts", methods=["GET"])
 def get_pc_parts():
